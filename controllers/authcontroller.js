@@ -1,15 +1,15 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import User from '../model/usermodel.js'; // ✅ Ensure correct path
+import User from '../model/usermodel.js'; 
 
-// ✅ Helper: password validation
+
 function validatePassword(password) {
   // Must have min 8 chars, 1 upper, 1 lower, 1 number, 1 special
   const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
   return regex.test(password);
 }
 
-// ✅ Function to generate JWT token
+// Function to generate JWT token
 const generateToken = (user) => {
   return jwt.sign(
     { id: user._id, email: user.email },

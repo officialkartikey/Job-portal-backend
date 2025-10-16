@@ -22,12 +22,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 app.use(cors());
-// ✅ Connect to MongoDB
+
 
 // app.get('/', (req, res) => {
 //   res.send('Job Application Portal API is running ✅');
 // });
-
+// ✅ Connect to MongoDB
 mongoose.connect(process.env.MONGO_CONN, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -35,7 +35,7 @@ mongoose.connect(process.env.MONGO_CONN, {
 .then(() => console.log('✅ MongoDB connected successfully'))
 .catch((err) => console.error('❌ MongoDB connection error:', err));
 
-// ✅ Mount routes
+// Mount routes
 app.use('/api/auth', authRoutes);
 app.use('/api/applications', jobAppRoutes); 
 app.use('/api/jobs', JobListingRoutes);
