@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// xsc
 const jobSchema = new mongoose.Schema({
   title: {
     type: String,
